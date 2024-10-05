@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
-import { Company } from "./company.model.js";
+import Company from "./company.model";
 
 /**@type {mongoose.Schema}*/
 const jobSchema = new mongoose.Schema(
@@ -53,4 +53,6 @@ const jobSchema = new mongoose.Schema(
 );
 
 /**@type {mongoose.Model}*/
-export const Job = new mongoose.model("Job", jobSchema);
+const Job = new mongoose.model("Job", jobSchema);
+
+export default Job;

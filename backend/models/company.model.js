@@ -45,4 +45,6 @@ const companySchema = new mongoose.Schema(
 );
 
 /**@type {mongoose.Model}*/
-export const Company = new mongoose.model("Company", companySchema);
+const Company = new mongoose.model("Company", companySchema);
+
+export default Company;

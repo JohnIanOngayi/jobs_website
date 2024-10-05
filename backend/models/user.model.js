@@ -6,12 +6,12 @@ const userSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: true,
+      required: [true, "firstName is required"],
     },
 
     lastName: {
       type: String,
-      required: true,
+      required: [true, "lastName is required"],
     },
 
     email: {
@@ -34,11 +34,13 @@ const userSchema = new mongoose.Schema(
 
     hashedPassword: {
       type: String,
-      required: true,
+      required: [true, "password is required"],
     },
   },
   { timestamps: true },
 );
 
 /**@type {mongoose.Model}*/
-export const User = new mongoose.model("User", userSchema);
+const User = new mongoose.model("User", userSchema);
+
+export default User;
