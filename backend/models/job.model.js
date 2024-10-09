@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
-import Company from "./company.model";
+// import Company from "./company.model";
 
 /**@type {mongoose.Schema}*/
 const jobSchema = new mongoose.Schema(

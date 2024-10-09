@@ -2,6 +2,8 @@ import express from "express";
 import { connectMongoDB } from "./backend/db/connectMongoDB.js";
 import dotenv from "dotenv";
 import userRoutes from "./backend/routes/user.routes.js";
+import companyRoutes from "./backend/routes/company.routes.js";
+import jobRoutes from "./backend/routes/job.routes.js";
 
 // variables
 dotenv.config();
@@ -23,8 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //Routing
 app.use("/users", userRoutes);
-// app.use("/companies", companyRoutes);
-// app.use("/jobs", jobRoutes);
+app.use("/companies", companyRoutes);
+app.use("/jobs", jobRoutes);
 
 app.get("/", (req, res) => {
   res.set({ "Content-Type": "text/plain" });

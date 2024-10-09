@@ -13,7 +13,7 @@ userRoutes.post("/sign_up", async (req, res) => {
       hashedPassword: password,
     });
     await newUser.save();
-    res.json(newUser);
+    res.status(201).json(newUser);
   } catch (error) {
     console.error(`Signup Controller Error: ${error.message}`);
     res.json({ error: error.message }).status(400);
