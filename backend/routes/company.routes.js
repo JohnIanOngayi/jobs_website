@@ -31,6 +31,7 @@ companyRoutes.get("/:id", async (req, res) => {
 // POST create a new company
 companyRoutes.post("/", async (req, res) => {
   try {
+    console.log("Hehehe post request", req.body);
     const { name, description, email, password, phone } = req.body;
 
     // Validation

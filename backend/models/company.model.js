@@ -38,7 +38,6 @@ const companySchema = new mongoose.Schema(
         validator: validator.isMobilePhone,
         message: (props) => `${props.value} is not a valid phone number!`,
       },
-      required: true,
     },
   },
   { timestamps: true },

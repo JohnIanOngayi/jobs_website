@@ -13,7 +13,7 @@ const jobSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
-      enum: ["Remote", "Onsite", "Hybrid"],
+      enum: ["Remote", "Onsite", "Hybrid", "Full-Time"],
     },
 
     description: {
@@ -24,7 +24,20 @@ const jobSchema = new mongoose.Schema(
     salaryRange: {
       type: String,
       default: "Not Specified",
-      enum: ["Not Specified"], //TODO: add more enums
+      enum: [
+        "Not Specified",
+        "Under $50K",
+        "$50K - 60K",
+        "$60K - 70K",
+        "$70K - 80K",
+        "$80K - 90K",
+        "$90K - 100K",
+        "$100K - 125K",
+        "$125K - 150K",
+        "$150K - 175K",
+        "$175K - 200K",
+        "Over $200K",
+      ],
     },
 
     country: {
