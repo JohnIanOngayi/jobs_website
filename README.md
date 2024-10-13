@@ -82,7 +82,7 @@ DELETE /users/:id
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/jobs_website.git
+   git clone https://github.com/JohnIanOngayi/jobs_website.git
    ```
 
 2. Install dependencies:
