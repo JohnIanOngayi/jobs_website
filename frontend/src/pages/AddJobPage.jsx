@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import { toast } from "react-toastify";
 const AddJobPage = ({ addJobSubmit }) => {
   const [title, setTitle] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState("Remote");
   const [description, setDescription] = useState("");
   const [salaryRange, setSalaryRange] = useState("Not Specified");
   const [location, setLocation] = useState("");

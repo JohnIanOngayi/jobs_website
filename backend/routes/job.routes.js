@@ -31,7 +31,6 @@ jobRoutes.get("/:id", async (req, res) => {
 
 // Create a new job
 jobRoutes.post("/", async (req, res) => {
-  console.log("Hehehe create Job", req.body);
   try {
     const {
       title,
@@ -94,7 +93,6 @@ jobRoutes.delete("/:id", async (req, res) => {
 
 // Update a job
 jobRoutes.put("/:id", async (req, res) => {
-  console.log("Hehehe PUt request", req.body);
   const { id } = req.params;
   const {
     title,
