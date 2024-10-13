@@ -41,14 +41,14 @@ Defines the schema for the Job model.
 
 #### User (Not yet integrated!)
 
-<!-- Defines the schema for the User model. -->
+Defines the schema for the User model.
 
-<!-- - `firstName`: The first name of the user. It is required. -->
-<!-- - `lastName`: The last name of the user. It is required. -->
-<!-- - `email`: The email address of the user. It is required, unique, and must be a valid email format. -->
-<!-- - `phone`: The phone number of the user. It defaults to an empty string and must be a valid phone number format. -->
-<!-- - `hashedPassword`: The hashed password for the user's account. It is required. -->
-<!-- - `timestamps`: Automatically adds `createdAt` and `updatedAt` timestamps to the schema. -->
+- `firstName`: The first name of the user. It is required.
+- `lastName`: The last name of the user. It is required.
+- `email`: The email address of the user. It is required, unique, and must be a valid email format.
+- `phone`: The phone number of the user. It defaults to an empty string and must be a valid phone number format.
+- `hashedPassword`: The hashed password for the user's account. It is required.
+- `timestamps`: Automatically adds `createdAt` and `updatedAt` timestamps to the schema.
 
 ### API
 

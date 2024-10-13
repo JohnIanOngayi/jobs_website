@@ -61,4 +61,51 @@ companyRoutes.post("/", async (req, res) => {
   }
 });
 
+// PUT update company by ID
+companyRoutes.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, description, email, password, phone } = req.body;
+
+    // Validate request data
+    if (!name || !description || !email || !password || !phone) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const company = await Company.findById(id);
+    if (!company) {
+      return res.status(404).json({ error: "Company not found" });
+    }
+
+    company.name = name;
+    company.description = description;
+    company.email = email;
+    company.hashedPassword = password;
+    company.phone = phone;
+
+    await company.save();
+    res.status(200).json(company);
+  } catch (error) {
+    console.error(`PUT company by id Controller Error: ${error.message}`);
+    res.status(400).json({ error: "Invalid Company ID" });
+  }
+});
+
+// DELETE company by ID
+companyRoutes.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const company = await Company.findById(id);
+    if (!company) {
+      return res.status(404).json({ error: "Company not found" });
+    }
+
+    await company.remove();
+    res.status(200).json({ message: "Company deleted successfully" });
+  } catch (error) {
+    console.error(`DELETE company by id Controller Error: ${error.message}`);
+    res.status(400).json({ error: "Invalid Company ID" });
+  }
+});
+
 export default companyRoutes;
