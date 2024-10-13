@@ -2,7 +2,20 @@ import mongoose from "mongoose";
 import validator from "validator";
 // import Company from "./company.model";
 
-/**@type {mongoose.Schema}*/
+/**
+ * Defines the schema for the Job model.
+ *
+ * @type {mongoose.Schema}
+ * @property {String} title - The title of the job. It is required.
+ * @property {String} type - The type of the job. It is required and must be one of "Remote", "Onsite", "Hybrid", or "Full-Time".
+ * @property {String} description - A description of the job. It is required.
+ * @property {String} salaryRange - The salary range for the job. It defaults to "Not Specified" and must be one of the predefined ranges.
+ * @property {String} country - The country where the job is located. It is required.
+ * @property {String} location - The specific location of the job within the country. It is required.
+ * @property {Date} expiresAt - The expiration date of the job posting. It defaults to one year from the current date and time.
+ * @property {mongoose.Schema.Types.ObjectId} company - The reference to the Company model. It is required.
+ * @property {Object} timestamps - Automatically adds createdAt and updatedAt timestamps to the schema.
+ */
 const jobSchema = new mongoose.Schema(
   {
     title: {
@@ -65,7 +78,11 @@ const jobSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-/**@type {mongoose.Model}*/
+/**
+ * The Job model based on the jobSchema.
+ *
+ * @type {mongoose.Model}
+ */
 const Job = new mongoose.model("Job", jobSchema);
 
 export default Job;

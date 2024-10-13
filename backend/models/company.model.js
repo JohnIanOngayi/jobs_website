@@ -1,7 +1,17 @@
 import mongoose from "mongoose";
 import validator from "validator";
 
-/**@type {mongoose.Schema}*/
+/**
+ * Defines the schema for the Company model.
+ *
+ * @type {mongoose.Schema}
+ * @property {String} name - The name of the company. It is required and must be unique.
+ * @property {String} description - A description of the company. It is required.
+ * @property {String} email - The email address of the company. It is required, unique, and must be a valid email format.
+ * @property {String} hashedPassword - The hashed password for the company's account. It is required and must be at least 8 characters long.
+ * @property {String} phone - The phone number of the company. It must be a valid phone number format.
+ * @property {Object} timestamps - Automatically adds createdAt and updatedAt timestamps to the schema.
+ */
 const companySchema = new mongoose.Schema(
   {
     name: {
@@ -43,7 +53,11 @@ const companySchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-/**@type {mongoose.Model}*/
+/**
+ * The Company model based on the companySchema.
+ *
+ * @type {mongoose.Model}
+ */
 const Company = new mongoose.model("Company", companySchema);
 
 export default Company;
