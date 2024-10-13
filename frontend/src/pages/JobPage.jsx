@@ -24,11 +24,13 @@ const JobPage = ({ deleteJob }) => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/jobs/${id}`);
+        const res = await fetch(
+          `https://jobs-website-muuk.onrender.com/jobs/${id}`,
+        );
         const data = await res.json();
         const company_id = data["company"];
         const company_res = await fetch(
-          `http://localhost:3000/companies/${company_id}`,
+          `https://jobs-website-muuk.onrender.com/companies/${company_id}`,
         );
         const company_data = await company_res.json();
         data["company"] = company_data;

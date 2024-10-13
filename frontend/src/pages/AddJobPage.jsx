@@ -16,7 +16,9 @@ const AddJobPage = ({ addJobSubmit }) => {
 
   useEffect(() => {
     const fetchCompanies = async () => {
-      const res = await fetch("http://localhost:3000/companies");
+      const res = await fetch(
+        "https://jobs-website-muuk.onrender.com/companies",
+      );
       const data = await res.json();
       setCompanies(data);
     };

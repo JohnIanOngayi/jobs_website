@@ -24,7 +24,9 @@ const EditJobPage = ({ editJobSubmit }) => {
 
   useEffect(() => {
     const fetchJob = async () => {
-      const res = await fetch(`http://localhost:3000/jobs/${id}`);
+      const res = await fetch(
+        `https://jobs-website-muuk.onrender.com/jobs/${id}`,
+      );
       const data = await res.json();
       setJob(data);
       setTitle(data.title);
@@ -36,7 +38,9 @@ const EditJobPage = ({ editJobSubmit }) => {
       setCompany_id(data.company_id);
     };
     const fetchCompanies = async () => {
-      const res = await fetch("http://localhost:3000/companies");
+      const res = await fetch(
+        "https://jobs-website-muuk.onrender.com/companies",
+      );
       const data = await res.json();
       setCompanies(data);
     };

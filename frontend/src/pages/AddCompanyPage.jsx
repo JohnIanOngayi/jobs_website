@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 const AddCompanyPage = ({ addCompanySubmit }) => {
   const [name, setName] = useState("");

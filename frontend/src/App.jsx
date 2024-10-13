@@ -15,7 +15,7 @@ import EditJobPage from "./pages/EditJobPage";
 
 const App = () => {
   const addJob = async (newJob) => {
-    const res = await fetch("http://localhost:3000/jobs/", {
+    const res = await fetch("https://jobs-website-muuk.onrender.com/jobs/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newJob),
@@ -24,27 +24,36 @@ const App = () => {
   };
 
   const editJob = async (jobID, updatedJob) => {
-    const res = await fetch(`http://localhost:3000/jobs/${jobID}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedJob),
-    });
+    const res = await fetch(
+      `https://jobs-website-muuk.onrender.com/jobs/${jobID}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedJob),
+      },
+    );
     return;
   };
 
   const deleteJob = async (jobID) => {
-    const res = await fetch(`http://localhost:3000/jobs/${jobID}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://jobs-website-muuk.onrender.com/jobs/${jobID}`,
+      {
+        method: "DELETE",
+      },
+    );
     return;
   };
 
   const addCompany = async (newCompany) => {
-    const res = await fetch("http://localhost:3000/companies/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newCompany),
-    });
+    const res = await fetch(
+      "https://jobs-website-muuk.onrender.com/companies/",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newCompany),
+      },
+    );
     return;
   };
 

@@ -9,7 +9,7 @@ const JobListings = ({ isHome = false }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/jobs/");
+        const res = await fetch("https://jobs-website-muuk.onrender.com/jobs/");
         const data = await res.json();
         isHome ? setJobs(data.slice(0, 3)) : setJobs(data);
       } catch (error) {
